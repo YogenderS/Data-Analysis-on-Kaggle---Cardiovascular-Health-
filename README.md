@@ -5,163 +5,68 @@ Cardiovascular illnesses (CVDs) are the major cause of death worldwide. CVDs inc
 The main purpose here is to collect characteristics of Heart Attack or factors that contribute to it. The size of the dataset is 1319 samples, which have nine fields, where eight fields are for input fields and one field for an output field. Age, gender(0 for Female, 1 for Male) ,heart rate (impulse), systolic BP (pressurehight), diastolic BP (pressurelow), blood sugar(glucose), CK-MB (kcm), and Test-Troponin (troponin) are representing the input fields, while the output field pertains to the presence of heart attack (class), which is divided into two categories (negative and positive); negative refers to the absence of a heart attack, while positive refers to the presence of a heart attack.
 
 # 🛠 Tools Used
-Tools used: Python (library: Seaborn, Matplotlib, Pandas, Numpy, sklearn and scipy)
+Tools used: 
 
-MySQL
+Google Colab (library: Seaborn, Matplotlib, Pandas, Numpy, sklearn and scipy)
 
 Excel
 
-Power BI
+# Documentation
+# Python Analysis:-
+# Table of Contents:
 
-Documentation
-Python Analysis:-
-Table of Contents:
-1️⃣ Load Dataset
+1️⃣ Import Libraries:
+Import essential Python libraries such as pandas, numpy, scikit-learn, and matplotlib.
 
-2️⃣ Import Libraries
+2️⃣ Load Dataset:
+Load the dataset into a Pandas DataFrame, using functions like pd.read_csv() or pd.read_excel().
 
-3️⃣ Exploratory Data Analysis
+3️⃣ Exploratory Data Analysis:
+Examine the first few rows of the dataset using df.head() to get a sense of the data.
+Check data types, statistics, and summary statistics using functions like df.info(), df.describe().
+Visualize data with plots (histograms, scatter plots, etc.) to understand the distribution of variables using libraries like Matplotlib and Seaborn.
+Identify any trends, patterns, or outliers in the data.
 
-4️⃣ Checking Null Values and Cleaning Data
+4️⃣ Checking Null, Duplicate, Outliers Values, Cleaning Data, Removing Noise from Data:
+Check for missing values using df.isnull().sum() and handle them by imputing or dropping rows/columns as needed.
+Identify and handle duplicate values using df.duplicated() and df.drop_duplicates().
+Detect and address outliers using statistical methods or visualization techniques.
+Clean and preprocess the data by handling categorical variables, scaling features, and addressing any data quality issues.
 
-5️⃣ Visualization :
+5️⃣ Feature Engineering and Building ML Models (Random Forest, Naive Bayes, KNN):
+Feature engineering involves creating new features or transforming existing ones to improve model performance.
+Split the dataset into training and testing sets using train_test_split.
+Build and train machine learning models:
+Random Forest: Create an instance of RandomForestClassifier or RandomForestRegressor and fit it to the training data.
+Naive Bayes: Use GaussianNB or other variants depending on the problem type (classification/regression).
+K-Nearest Neighbors (KNN): Instantiate KNeighborsClassifier or KNeighborsRegressor and train it on the training data.
+Evaluate model performance with appropriate metrics (e.g., accuracy, F1-score, mean squared error) using cross-validation or test data.
 
-Sales Analysis:
-1️⃣ Analyze the number of products sold and revenue generated to understand sales performance over time.
+6️⃣ Feature Importance, Insights, and Recommendations:
+Determine feature importance using model-specific attributes (e.g., feature_importances_ for Random Forest).
+Gain insights into which features have the most impact on the model's predictions.
+Provide recommendations or actionable insights based on the analysis, such as which features to focus on for improvement or which model performed the best.
 
-2️⃣ Identify customer demographics to determine which groups are purchasing the most products.
+# Here are some insights and recommendations based on these results:
 
-3️⃣ Track availability and stock levels to ensure the right products are in stock when customers are ready to buy.
+# Insights:
 
-Operational Analysis:
-1️⃣ Analyze lead times, order quantities, and production volumes to optimize inventory management and reduce stockouts.
+1️⃣ Feature Importance: Both the domain knowledge and the decision tree model highlight "kcm" and "troponin" as critical features for predicting heart attacks. This suggests that these features contain valuable information for diagnosis.
 
-2️⃣ Track manufacturing lead times and costs to identify areas for improvement and cost savings.
+2️⃣ Model Performance: The Random Forest model outperforms the other two models significantly, with an accuracy of 97.98%. This indicates that Random Forest is the most suitable algorithm for this task, given the provided data.
 
-3️⃣ Monitor inspection results and defect rates to identify quality issues and improve manufacturing processes.
+3️⃣ Naive Bayes: Although Naive Bayes shows a relatively high accuracy of 94.44%, it lags behind Random Forest. This might be due to the model's assumption of independence among features, which may not hold true for your data.
 
-Shipping Analysis:
-1️⃣ Analyze costs, transportation modes, and routes to optimize logistics and reduce shipping costs.
+4️⃣ K-Nearest Neighbors (KNN): KNN has the lowest accuracy at 62.37%, which suggests that it might not be the best choice for this problem. This may be due to the sensitivity of KNN to noisy data and the curse of dimensionality.
 
-2️⃣ Monitor shipping times, shipping carriers, and modes of transportation to ensure timely delivery to customers.
+# Recommendations:
 
-3️⃣ Track shipping costs associated with shipping carriers and revenue generated to identify areas for cost savings.
+1️⃣ Focus on "kcm" and "troponin": Given their high importance in predicting heart attacks, medical professionals and researchers should pay special attention to the "kcm" and "troponin" values when assessing a patient's risk. These factors could be critical for early detection and intervention.
 
-Libraries Used for the Analysis:
-Data Manipulation: NumPy, Pandas
+2️⃣ Data Quality: Since the model's performance heavily relies on the quality of data, ensure that the data collection and preprocessing steps are accurate and comprehensive. Outliers and data noise can impact the effectiveness of machine learning models.
 
-Data Visualization: Seaborn, Matplotlib
+3️⃣ Further Investigation: It's essential to delve deeper into the dataset to understand the relationships between these features and the occurrence of heart attacks. Investigate how "kcm" and "troponin" interact with other features to gain a more comprehensive understanding of the problem.
 
-Mysql Analysis:-
-I used MySQL to analyze supply chain data and answer specific questions.
+4️⃣ Consult Domain Experts: Collaboration with medical professionals and domain experts is crucial for interpreting model results and implementing recommendations effectively. Their expertise can provide valuable context and insights.
 
-📊 Total Revenue by Product Type: Calculate the total revenue generated by each product type. This can help identify the most profitable products.
 
-🚚 Shipping Costs by Carrier: Calculate the average shipping costs for each shipping carrier to evaluate which carrier is the most cost-effective.
-
-⏳ Lead Times by Supplier: Calculate average lead times for each supplier to assess their reliability in delivering products on time.
-
-🌍 Total Products Sold by Location: Determine the total number of products sold in each location to understand regional demand.
-
-🔍 Defect Rates by Inspection Results: Calculate defect rates for different inspection results to assess product quality.
-
-💰 Ranking Products by Profitability: Write a query to rank products based on profitability, where profitability is calculated as (revenue generated - manufacturing costs - shipping costs).
-
-📦 Supplier Performance Analysis: Calculate the average lead time for each supplier and identify suppliers with lead times higher than the overall average.
-
-🏆 Top 5 Shipping Carriers by Cost Efficiency: Determine the top 5 shipping carriers with the lowest average shipping costs per product shipped.
-
-Excel Analysis:-
-Excel
-
-Excel Analysis Summary for Supply Chain Capstone Project
-
-Create an Excel dashboard for your supply chain capstone project and visualize key insights from your supply chain dataset.
-
-📊 Visualizing Key Insights
-
-From the overall analysis, I have discovered some key insights:
-
-💰 Skincare products are the most profitable, generating significant revenue. Haircare products come next in popularity, followed by cosmetics.
-
-🚚 Carrier C has the highest shipping costs on average, with carrier A as the second-costliest option. Carrier B, on the other hand, is the most affordable choice.
-
-🛳️ Among the four transportation modes (air, rail, road, and sea), air transportation is associated with higher shipping costs, while sea transportation offers a more economical solution.
-
-📈 The top locations for product sales are Kolkata and Delhi, closely followed by Mumbai and Chennai, each with a substantial number of products sold. In contrast, Bangalore reports the lowest number of products sold.
-
-❌ Among the three types of products, haircare exhibits the highest defect rate at 37%, followed by skincare and cosmetics.
-
-💼 The manufacturing cost of skincare products is higher than that of haircare and cosmetics.
-
-This Excel dashboard provides a concise overview of the supply chain dataset, making it easier to understand and make data-driven decisions.
-
-Power BI:-
-Power BI - Dashboard
-
-In Powe Bi, build charts, graphs, and KPIs to visualize the data and understand it more interactively, along with that, build some slicers to make it more user-friendly to customize the charts and graphs.
-
-Build some cards to understand some key performance indicators, including:
-
-Key Performance Indicators (KPIs):
-1️⃣ Total Revenue: 577,000
-
-2️⃣ Average Product Price: 49.46
-
-3️⃣ Total Products Sold: 46,000
-
-4️⃣ Manufacturing Cost: 47.27
-
-5️⃣ Total Available Products: 4,840
-
-6️⃣ Total Stock Value: 4,777
-
-Charts and Graphs:
-Average Defect Rate, Manufacturing Lead Time, and Manufacturing Cost by Product
-
-Customer Demographics vs. Number of Products Sold by Product Type
-
-Total Revenue Generated by Product Type and Total Products Sold by Product Type
-
-Average Manufacturing Cost vs. Average Price by Product Type
-
-Transportation Modes vs. Routes with Average Cost
-
-Defect Rate vs. Inspection Rate by Product Type
-
-Transportation Modes and Shipping Carriers with Average Shipping Time
-
-Interactive Slicers:
-Product Type
-
-Transportation Mode
-
-Shipping Carrier
-
-Routes
-
-Suppliers' Name
-
-Insights
-The highest number of products sold among the three product categories is skincare, which accounts for 45% of the business. Haircare follows at 29%, and cosmetics contribute 25% to the revenue.
-
-Analyzing customer demographics versus the number of products sold by product type reveals that the female group purchases higher-quality skincare and cosmetic products, while the male group opts for products of roughly equal quality in terms of haircare and cosmetics.
-
-An unknown group category purchases a higher quantity of all three product types. Skincare products are the most popular among all four product categories, indicating a high demand.
-
-Analyzing product availability and stock levels shows that the company maintains an equal quantity of inventory for haircare and skincare products, with slightly less stock for cosmetics. Skincare products exhibit higher availability and lower stock levels, enabling quick manufacturing and shipment.
-In contrast, cosmetics and haircare have higher stock levels and lower availability, meaning the company faces challenges in promptly shipping these products due to longer manufacturing times.
-
-Skincare products have higher order quantities and longer lead times, often associated with higher production volumes.
-Higher production volumes necessitate longer lead times to ensure adequate time for manufacturing products to meet customer demand.
-
-Haircare products also exhibit longer lead times and higher production volumes, possibly due to the need for more specialized ingredients or manufacturing processes.
-
-All product categories show a higher defect rate.
-
-An analysis of revenue generated by shipping carriers indicates that shipping carrier B is costlier but generates higher revenue.
-
-According to the graph, the fastest and most efficient shipping option is Carrier B, and the most efficient transportation mode is road in all four transportation modes.
-
-Links
-Power Bi Dashbaord
