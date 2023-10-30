@@ -23,28 +23,44 @@ Load the dataset into a Pandas DataFrame, using functions like pd.read_csv() or 
 
 3️⃣ Exploratory Data Analysis:
 Examine the first few rows of the dataset using df.head() to get a sense of the data.
+
 Check data types, statistics, and summary statistics using functions like df.info(), df.describe().
+
 Visualize data with plots (histograms, scatter plots, etc.) to understand the distribution of variables using libraries like Matplotlib and Seaborn.
 Identify any trends, patterns, or outliers in the data.
 
 4️⃣ Checking Null, Duplicate, Outliers Values, Cleaning Data, Removing Noise from Data:
+
 Check for missing values using df.isnull().sum() and handle them by imputing or dropping rows/columns as needed.
+
 Identify and handle duplicate values using df.duplicated() and df.drop_duplicates().
+
 Detect and address outliers using statistical methods or visualization techniques.
+
 Clean and preprocess the data by handling categorical variables, scaling features, and addressing any data quality issues.
 
 5️⃣ Feature Engineering and Building ML Models (Random Forest, Naive Bayes, KNN):
+
 Feature engineering involves creating new features or transforming existing ones to improve model performance.
+
 Split the dataset into training and testing sets using train_test_split.
+
 Build and train machine learning models:
+
 Random Forest: Create an instance of RandomForestClassifier or RandomForestRegressor and fit it to the training data.
+
 Naive Bayes: Use GaussianNB or other variants depending on the problem type (classification/regression).
+
 K-Nearest Neighbors (KNN): Instantiate KNeighborsClassifier or KNeighborsRegressor and train it on the training data.
+
 Evaluate model performance with appropriate metrics (e.g., accuracy, F1-score, mean squared error) using cross-validation or test data.
 
 6️⃣ Feature Importance, Insights, and Recommendations:
+
 Determine feature importance using model-specific attributes (e.g., feature_importances_ for Random Forest).
+
 Gain insights into which features have the most impact on the model's predictions.
+
 Provide recommendations or actionable insights based on the analysis, such as which features to focus on for improvement or which model performed the best.
 
 # Here are some insights and recommendations based on these results:
